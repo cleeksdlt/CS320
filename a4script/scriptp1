@@ -1,0 +1,20 @@
+#! /bin/csh -f
+
+#Author: Christian De La Torre
+
+#Instructor: Carroll
+
+#Class: CS320
+
+#Due Date: April 12, 2017
+
+#Title: Character Changer
+
+#1st utility converts uppercase to lowercase and vice versa, 2nd utility deletes non-ascii characters
+
+#3rd utility converts special characters into their hexadecimal equivalent, 4th utility folds the string after being 20 characters long
+
+#For each of the cases, the return value of scriptp1 after running echo $status was 0, meaning the output was changed within the program
+
+
+tr A-Z,a-z a-z,A-Z | tr -d '\200'-'\377'| sed -e 's/ /%20/g' -e 's/_/%5F/g' -e 's/:/%3A/g' -e 's/?/%3F/g' -e 's/&/%26/g' -e 's/[/]/%2F/g' | fold -w '20'
